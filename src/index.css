@@ -149,6 +149,73 @@
   .section-padding {
     @apply py-20 px-4 sm:px-6 lg:px-8;
   }
+
+  .glass-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  }
+
+  .glass-dark {
+    background: rgba(0, 0, 0, 0.05);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .hero-bg {
+    background: 
+      radial-gradient(ellipse at top left, hsl(197, 71%, 54%, 0.15) 0%, transparent 50%),
+      radial-gradient(ellipse at top right, hsl(197, 50%, 70%, 0.1) 0%, transparent 50%),
+      radial-gradient(ellipse at center bottom, hsl(197, 71%, 54%, 0.08) 0%, transparent 50%);
+  }
+
+  .animated-border {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .animated-border::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(197, 71%, 54%, 0.4), transparent);
+    animation: shimmer 2s infinite;
+  }
+
+  .particle {
+    position: absolute;
+    background: hsl(197, 71%, 54%);
+    border-radius: 50%;
+    opacity: 0.6;
+    animation: particle-float 8s infinite ease-in-out;
+  }
+
+  .text-glow {
+    text-shadow: 0 0 20px hsl(197, 71%, 54%, 0.5);
+  }
+
+  .hero-image-wrapper {
+    position: relative;
+    background: linear-gradient(145deg, hsl(197, 71%, 54%, 0.1), hsl(197, 50%, 70%, 0.1));
+    border-radius: 2rem;
+    padding: 1rem;
+  }
+
+  .hero-image-wrapper::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    padding: 2px;
+    background: linear-gradient(145deg, hsl(197, 71%, 54%), hsl(197, 50%, 70%));
+    border-radius: inherit;
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask-composite: subtract;
+    animation: rotate 4s linear infinite;
+  }
 }
 
 @layer utilities {
@@ -166,5 +233,69 @@
   }
   50% {
     transform: translateY(-20px);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+@keyframes particle-float {
+  0%, 100% {
+    transform: translateY(0px) translateX(0px);
+    opacity: 0.6;
+  }
+  25% {
+    transform: translateY(-30px) translateX(10px);
+    opacity: 1;
+  }
+  50% {
+    transform: translateY(-60px) translateX(-5px);
+    opacity: 0.8;
+  }
+  75% {
+    transform: translateY(-30px) translateX(-10px);
+    opacity: 1;
+  }
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 20px hsl(197, 71%, 54%, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 40px hsl(197, 71%, 54%, 0.8);
+  }
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes blink {
+  from, to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: hsl(197, 71%, 54%);
   }
 }
