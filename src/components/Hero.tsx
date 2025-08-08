@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { ChevronDown, Download, Github, Linkedin, Sparkles, Code, Globe } from "lucide-react";
-import heroImage from "@/assets/teju-hero.jpg";
+import heroImage from "@/assets/teju-profile.jpg";
 
 const Hero = () => {
   const [currentRole, setCurrentRole] = useState(0);
