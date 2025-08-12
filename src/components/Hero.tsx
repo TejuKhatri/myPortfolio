@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
+import CVDocument from "@/components/CVDocument";
 import { ChevronDown, Download, Github, Linkedin, Sparkles, Code, Globe } from "lucide-react";
 import heroImage from "@/assets/teju-profile.jpg";
-import cvFile from "@/assets/teju-cv.png";
 
 const Hero = () => {
   const [currentRole, setCurrentRole] = useState(0);
@@ -142,21 +142,7 @@ const Hero = () => {
                 <Sparkles className="w-5 h-5 mr-2 group-hover:rotate-12 transition-transform" />
                 Explore My Work
               </Button>
-            <Button 
-              variant="outline" 
-              className="group btn-3d border-2 border-primary/50 text-primary hover:bg-primary hover:text-primary-foreground px-8 py-4 text-lg font-semibold glass-card"
-              onClick={() => {
-                const link = document.createElement('a');
-                link.href = cvFile;
-                link.download = 'Teju_Khatri_CV.png';
-                document.body.appendChild(link);
-                link.click();
-                document.body.removeChild(link);
-              }}
-            >
-              <Download className="w-5 h-5 mr-2 group-hover:scale-110 transition-transform" />
-              Download CV
-            </Button>
+            <CVDocument />
             </div>
             
             {/* Enhanced Social Links */}
