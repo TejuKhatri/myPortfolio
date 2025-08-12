@@ -23,7 +23,7 @@ const Contact = () => {
     try {
       await emailjs.send(
         'service_zeuxccq', // Your service ID
-        'template_default', // You can create a custom template in EmailJS dashboard
+        'template_c1s9nm3', // Your template ID
         {
           from_name: formData.name,
           from_email: formData.email,
