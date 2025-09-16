@@ -93,14 +93,14 @@ const Hero = () => {
             {/* Status Badge */}
             <div className="inline-flex items-center glass-card rounded-full px-6 py-3 mb-6 animate-pulse">
               <div className="w-2 h-2 bg-green-400 rounded-full mr-3 animate-pulse"></div>
-              <span className="text-sm font-medium">Available for New Projects</span>
+           
             </div>
             
             {/* Main Heading with Enhanced Typography */}
             <div className="space-y-4">
-              <h1 className="text-6xl lg:text-8xl font-bold leading-tight">
-                <span className="text-glow text-gradient block">Teju</span>
-                <span className="text-foreground/90 block">Khatri</span>
+              <h1 className="text-6xl lg:text-5xl font-bold leading-tight">
+                <span className="text-glow text-gradient block">Teju Khatri</span>
+              
               </h1>
               
               {/* Animated Role */}

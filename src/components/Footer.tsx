@@ -90,7 +90,7 @@ const Footer = () => {
             © {currentYear} Teju Khatri. All rights reserved.
           </div>
           <div className="flex items-center text-muted-foreground text-sm mt-4 md:mt-0">
-            Made with <Heart className="w-4 h-4 mx-1 text-red-500" /> using React.js & Tailwind CSS
+            Made with using React.js & Tailwind CSS
           </div>
         </div>
       </div>
